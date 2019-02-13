@@ -1,2 +1,4 @@
-# itui
-e2e helpers
+# e2e tests for Qustodio (PAR/QFP/QWEB)
+
+Welcome to automation :)
+

@@ -1,4 +1,4 @@
-import { defineSupportCode } from 'cucumber';
+import  { Given } from 'cucumber';
 
 import checkContainsAnyText from '../support/check/checkContainsAnyText';
 import checkIsEmpty from '../support/check/checkIsEmpty';
@@ -23,7 +23,6 @@ import loginFP from '../support/action/loginFP';
 import resizeScreenSize from '../support/action/resizeScreenSize';
 
 
-defineSupportCode(({ Given }) => {
     Given(
         /^I open the (url|site) "([^"]*)?"$/,
         openWebsite
@@ -133,4 +132,4 @@ defineSupportCode(({ Given }) => {
         /^a (alertbox|confirmbox|prompt) is( not)* opened$/,
         checkModal
     );
-});
+

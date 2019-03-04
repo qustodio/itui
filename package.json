@@ -22,15 +22,5 @@
     "wdio-selenium-standalone-service": "~0.0.10",
     "wdio-spec-reporter": "~0.1.2",
     "webdriverio": "4.12.0"
-  },
-  "devDependencies": {
-    "babel-jest": "~23.0.0-alpha.0",
-    "babel-polyfill": "~6.26.0",
-    "eslint": "~4.19.0",
-    "eslint-config-airbnb-base": "~12.1.0",
-    "eslint-plugin-import": "~2.11.0",
-    "forever": "~0.15.3",
-    "http-server": "~0.11.1",
-    "jest": "~22.4.2"
   }
 }

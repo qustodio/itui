@@ -1,4 +1,4 @@
-import { defineSupportCode } from 'cucumber';
+import  { When } from 'cucumber';
 
 import clearInputField from '../support/action/clearInputField';
 import clickElement from '../support/action/clickElement';
@@ -25,7 +25,6 @@ import setRandomEmailInputField from '../support/action/setRandomEmailInputField
 import repeatInputField from '../support/action/repeatInputField';
 
 
-defineSupportCode(({ When }) => {
     When(
         /^I (click|doubleclick) on the (link|button|element) "([^"]*)?"$/,
         clickElement
@@ -140,4 +139,4 @@ defineSupportCode(({ When }) => {
         /^I refresh the current page$/,
         refresh
     );
-});
+

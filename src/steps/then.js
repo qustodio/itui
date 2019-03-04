@@ -1,4 +1,4 @@
-import { defineSupportCode } from 'cucumber';
+import  { Then } from 'cucumber';
 
 import checkClass from '../support/check/checkClass';
 import checkContainsAnyText from '../support/check/checkContainsAnyText';
@@ -31,7 +31,6 @@ import waitForVisible from '../support/action/waitForVisible';
 import checkIfElementExists from '../support/lib/checkIfElementExists';
 import checkContainsProperty from '../support/check/checkContainsProperty';
 
-defineSupportCode(({ Then }) => {
     Then(
         /^I expect that the title is( not)* "([^"]*)?"$/,
         checkTitle
@@ -186,4 +185,3 @@ defineSupportCode(({ Then }) => {
         /^I expect that a (alertbox|confirmbox|prompt)( not)* contains the text "([^"]*)?"$/,
         checkModalText
     );
-});

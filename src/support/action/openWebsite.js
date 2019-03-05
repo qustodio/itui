@@ -8,7 +8,11 @@ module.exports = (type, page) => {
      * The URL to navigate to
      * @type {String}
      */
-    const url = (type === 'url') ? page : browser.options.baseUrl + page;
-
-    browser.url(url);
+    if (browser.options.pipeline){
+       browser.url(browser.options.baseUrl)
+       }
+       else {  
+            const url = (type === 'url') ? page : browser.options.baseUrl + page;
+            browser.url(url);
+       }
 };

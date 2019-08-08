@@ -24,7 +24,7 @@ module.exports = (elementType, element, falseCase, expectedText) => {
      * The expected text to validate against
      * @type {String}
      */
-    let parsedExpectedText = expectedText;
+    let parsedExpectedText = expectedText.toUpperCase();
 
     /**
      * Whether to check if the content equals the given text or not
@@ -47,8 +47,8 @@ module.exports = (elementType, element, falseCase, expectedText) => {
     const text = browser[command](element);
 
     if (boolFalseCase) {
-        parsedExpectedText.should.not.equal(text);
+        parsedExpectedText.should.not.equal(text.toUpperCase());
     } else {
-        parsedExpectedText.should.equal(text);
+        parsedExpectedText.should.equal(text.toUpperCase());
     }
 };

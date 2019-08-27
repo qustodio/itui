@@ -14,7 +14,7 @@ module.exports = (method, element) => {
     const command = (method === 'add') ? 'addValue' : 'setValue';
 
     var date = Date.now().toString();
-    var value = "laia.pacheco+" + date + "@qustodio.com";
+    var value = "qa.qustodio.e2etest+" + date + "@gmail.com";
 
     console.log(value);
 

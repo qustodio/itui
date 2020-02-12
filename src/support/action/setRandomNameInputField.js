@@ -27,4 +27,5 @@ module.exports = (method, element) => {
   }
 
   browser[command](element, checkValue);
+  global.profileToDelete = value;
 };

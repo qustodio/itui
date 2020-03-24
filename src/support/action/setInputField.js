@@ -28,5 +28,5 @@ module.exports = (method, value, element) => {
         global.world={};
     }
 
-    global.world[element] = value;
+    global.world[element] = checkValue;
 };

@@ -24,6 +24,7 @@ import setFirstInputField from "../support/action/setFirstInputField";
 import setRandomEmailInputField from "../support/action/setRandomEmailInputField";
 import setRandomNameInputField from "../support/action/setRandomNameInputField";
 import repeatInputField from "../support/action/repeatInputField";
+import selectCreatedProfile from "../support/action/selectCreatedProfile";
 
 When(
   /^I (click|doubleclick) on the (link|button|element) "([^"]*)?"$/,
@@ -96,3 +97,5 @@ When(
 );
 
 When(/^I refresh the current page$/, refresh);
+
+When(/^I open the created profile with the inputfield "([^"]*)?"$/, selectCreatedProfile);

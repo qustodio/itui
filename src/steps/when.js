@@ -98,4 +98,4 @@ When(
 
 When(/^I refresh the current page$/, refresh);
 
-When(/^I open the created profile$/, selectCreatedProfile);
+When(/^I open the created profile with the inputfield "([^"]*)?"$/, selectCreatedProfile);

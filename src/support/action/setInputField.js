@@ -23,4 +23,10 @@ module.exports = (method, value, element) => {
     }
 
     browser[command](element, checkValue);
+
+    if (!globalThis.world){
+        globalThis.world={};
+    }
+
+    global.world[element] = value;
 };

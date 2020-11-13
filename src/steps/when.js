@@ -1,4 +1,6 @@
-import { When } from "cucumber";
+import {
+  When
+} from "cucumber";
 
 import clearInputField from "../support/action/clearInputField";
 import clickElement from "../support/action/clickElement";
@@ -99,3 +101,5 @@ When(
 When(/^I refresh the current page$/, refresh);
 
 When(/^I open the created profile with the inputfield "([^"]*)?"$/, selectCreatedProfile);
+
+When(/^When I scroll to the element "([^"]*)?"$/, selectCreatedProfile);

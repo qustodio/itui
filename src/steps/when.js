@@ -1,4 +1,6 @@
-import { When } from "cucumber";
+import {
+  When
+} from "cucumber";
 
 import clearInputField from "../support/action/clearInputField";
 import clickElement from "../support/action/clickElement";
@@ -26,10 +28,10 @@ import setRandomNameInputField from "../support/action/setRandomNameInputField";
 import repeatInputField from "../support/action/repeatInputField";
 import selectCreatedProfile from "../support/action/selectCreatedProfile";
 
-When(
-  /^I (click|doubleclick) on the (link|button|element) "([^"]*)?"$/,
-  clickElement
-);
+
+
+
+When(/^I (click|doubleclick) on the (link|button|element) "([^"]*)?"$/, clickElement);
 
 When(/^I (add|set) "([^"]*)?" to the inputfield "([^"]*)?"$/, setInputField);
 
@@ -59,42 +61,21 @@ When(/^I focus the last opened (window|tab)$/, focusLastOpenedWindow);
 
 When(/^I return to the parent iframe$/, returnToParentFrame);
 
-When(
-  /^I (add|set) "([^"]*)?" to the first inputfield "([^"]*)?"$/,
-  setFirstInputField
-);
+When(/^I (add|set) "([^"]*)?" to the first inputfield "([^"]*)?"$/, setFirstInputField);
 
-When(
-  /^I (add|set) a random email to the inputfield "([^"]*)?"$/,
-  setRandomEmailInputField
-);
+When(/^I (add|set) a random email to the inputfield "([^"]*)?"$/, setRandomEmailInputField);
 
-When(
-  /^I (add|set) a random name to the inputfield "([^"]*)?"$/,
-  setRandomNameInputField
-);
+When(/^I (add|set) a random name to the inputfield "([^"]*)?"$/, setRandomNameInputField);
 
-When(
-  /^I repeat the text in inputfield "([^"]*)?" in the inputfield "([^"]*)?"$/,
-  repeatInputField
-);
+When(/^I repeat the text in inputfield "([^"]*)?" in the inputfield "([^"]*)?"$/, repeatInputField);
 
-When(
-  /^I select the (\d+)(st|nd|rd|th) option for element "([^"]*)?"$/,
-  selectOptionByIndex
-);
+When(/^I select the (\d+)(st|nd|rd|th) option for element "([^"]*)?"$/, selectOptionByIndex);
 
 When(/^I switch to the iframe "([^"]*)?"$/, switchToFrame);
 
-When(
-  /^I select the option with the (name|value|text) "([^"]*)?" for element "([^"]*)?"$/,
-  selectOption
-);
+When(/^I select the option with the (name|value|text) "([^"]*)?" for element "([^"]*)?"$/, selectOption);
 
-When(
-  /^I move to element "([^"]*)?"(?: with an offset of (\d+),(\d+))*$/,
-  moveToElement
-);
+When(/^I move to element "([^"]*)?"(?: with an offset of (\d+),(\d+))*$/, moveToElement);
 
 When(/^I refresh the current page$/, refresh);
 

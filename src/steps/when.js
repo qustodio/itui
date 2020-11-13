@@ -79,4 +79,4 @@ When(/^I move to element "([^"]*)?"(?: with an offset of (\d+),(\d+))*$/, moveTo
 
 When(/^I refresh the current page$/, refresh);
 
-When(/^I open the created profile with the inputfield "([^"]*)?"$/, scroll);
+When(/^I open the created profile with the inputfield "([^"]*)?"$/, selectCreatedProfile);

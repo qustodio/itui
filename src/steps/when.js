@@ -27,7 +27,7 @@ import setRandomEmailInputField from "../support/action/setRandomEmailInputField
 import setRandomNameInputField from "../support/action/setRandomNameInputField";
 import repeatInputField from "../support/action/repeatInputField";
 import selectCreatedProfile from "../support/action/selectCreatedProfile";
-import scrollToElement from "../support/action/scrollToElement";
+
 
 
 

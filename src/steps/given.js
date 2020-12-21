@@ -20,6 +20,7 @@ import isEnabled from '../support/check/isEnabled';
 import isVisible from '../support/check/isVisible';
 import openWebsite from '../support/action/openWebsite';
 import loginFP from '../support/action/loginFP';
+import loginPAR from '../support/action/loginPAR';
 import resizeScreenSize from '../support/action/resizeScreenSize';
 
 
@@ -64,8 +65,13 @@ import resizeScreenSize from '../support/action/resizeScreenSize';
     );
 
     Given(
-        /^I login to FP with my test account$/,
+        /^I login to FP with user "([^"]*)?" and password "([^"]*)?"$/,
         loginFP
+    );
+
+    Given(
+        /^I login to PAR with user "([^"]*)?" and password "([^"]*)?"$/,
+        loginPAR
     );
 
     Given(

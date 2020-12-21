@@ -1,14 +1,15 @@
 /**
- * Open the given URL
- * @param  {String}   type Type of navigation (url or site)
- * @param  {String}   page The URL to navigate to
+ * Login to old FP with the given user and password
+ * @param  {String}   user The email of the user
+ * @param  {String}   pass The password for that user
  */
-module.exports = () => {
+module.exports = (user, pass) => {
 
-    console.log(" Opening URL : " + browser.options.baseUrl);
+    console.log(" Opening FP URL : " + browser.options.baseUrl);
     browser.url(browser.options.baseUrl);
+    browser.waitForVisible("#login_form", 10000);
 
-    browser.setValue("#login_form input[name='email']", "laia.pacheco+devautotest@qustodio.com");
-    browser.setValue("#login_form input[name='password']", "laialaia");
+    browser.setValue("#login_form input[name='email']", user);
+    browser.setValue("#login_form input[name='password']", pass);
     browser.click("#login_button");
 };

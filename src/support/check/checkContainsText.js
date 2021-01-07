@@ -1,5 +1,5 @@
 /**
- * Check if the given elements contains text
+ * Check if the given elements contains text (compare in lower case)
  * @param  {String}   elementType   Element type (element or button)
  * @param  {String}   element       Element selector
  * @param  {String}   falseCase     Whether to check if the content contains
@@ -51,8 +51,8 @@ module.exports = (elementType, element, falseCase, expectedText) => {
     }
 
     if (boolFalseCase) {
-        expect(text).to.not.contain(stringExpectedText);
+        expect(text.toLowerCase()).to.not.contain(stringExpectedText.toLowerCase());
     } else {
-        expect(text).to.contain(stringExpectedText);
+        expect(text.toLowerCase()).to.contain(stringExpectedText.toLowerCase());
     }
 };

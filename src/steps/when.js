@@ -27,6 +27,7 @@ import setRandomEmailInputField from "../support/action/setRandomEmailInputField
 import setRandomNameInputField from "../support/action/setRandomNameInputField";
 import repeatInputField from "../support/action/repeatInputField";
 import selectCreatedProfile from "../support/action/selectCreatedProfile";
+import removeRandomProfiles from "../support/action/removeRandomProfiles";
 
 
 
@@ -80,3 +81,5 @@ When(/^I move to element "([^"]*)?"(?: with an offset of (\d+),(\d+))*$/, moveTo
 When(/^I refresh the current page$/, refresh);
 
 When(/^I open the created profile with the inputfield "([^"]*)?"$/, selectCreatedProfile);
+
+When(/^I remove all profiles with name containing "([^"]*)?"$/, removeRandomProfiles);

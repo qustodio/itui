@@ -4,12 +4,12 @@
  *                                 expected value or not
  * @param  {String}   expectedPath The expected path to match against
  */
-module.exports = (falseCase, expectedPath) => {
+export default (falseCase, expectedPath) => {
     /**
      * The URL of the current browser window
      * @type {String}
      */
-    let currentUrl = browser.url().value.replace(/http(s?):\/\//, '');
+    let currentUrl = browser.getUrl().replace(/http(s?):\/\//, '');
 
     /**
      * The base URL of the current browser window
@@ -20,14 +20,13 @@ module.exports = (falseCase, expectedPath) => {
     currentUrl = currentUrl.replace(domain, '');
 
     if (falseCase) {
-        expect(currentUrl).to.not
-            .equal(expectedPath, `expected path not to be "${currentUrl}"`);
+        expect(currentUrl)
+            .not.toEqual(expectedPath, `expected path not to be "${currentUrl}"`);
     } else {
-        expect(currentUrl).to
-            .equal(
-                expectedPath,
-                `expected path to be "${expectedPath}" but found ` +
-                `"${currentUrl}"`
-            );
+        expect(currentUrl).toEqual(
+            expectedPath,
+            `expected path to be "${expectedPath}" but found `
+            + `"${currentUrl}"`
+        );
     }
 };

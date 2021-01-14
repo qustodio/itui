@@ -1,21 +1,25 @@
 /**
- * Check if the given element is enabled
- * @param  {String}   element   Element selector
- * @param  {String}   falseCase Whether to check if the given element is enabled
- *                              or not
+ * Check if the given selector is enabled
+ * @param  {String}   selector   Element selector
+ * @param  {String}   falseCase Whether to check if the given selector
+ *                              is enabled or not
  */
-module.exports = (element, falseCase) => {
+export default (selector, falseCase) => {
     /**
-     * The enabled state of the given element
+     * The enabled state of the given selector
      * @type {Boolean}
      */
-    const isEnabled = browser.isEnabled(element);
+    const isEnabled = $(selector).isEnabled();
 
     if (falseCase) {
-        expect(isEnabled).to.not
-            .equal(true, `Expected element "${element}" not to be enabled`);
+        expect(isEnabled).not.toEqual(
+            true,
+            `Expected element "${selector}" not to be enabled`
+        );
     } else {
-        expect(isEnabled).to
-            .equal(true, `Expected element "${element}" to be enabled`);
+        expect(isEnabled).toEqual(
+            true,
+            `Expected element "${selector}" to be enabled`
+        );
     }
 };

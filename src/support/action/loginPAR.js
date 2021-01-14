@@ -10,9 +10,14 @@ module.exports = (user, pass) => {
 
     console.log(" Opening FP URL : " + PARurl);
     browser.url(PARurl);
-    browser.waitForVisible("#login", 10000);
-    
-    browser.setValue("#login input[name='username']", user);
-    browser.setValue("#login input[name='password']", pass);
-    browser.click(".Login__button--container > button");
+    $('#login').waitForDisplayed();
+
+    const username =  $("#login input[name='username']");
+    const password =  $("#login input[name='password']");
+    const loginButton =  $(".Login__button--container > button");
+    username.setValue(user);
+    password.setValue(pass);
+    loginButton.click();
+
+
 };

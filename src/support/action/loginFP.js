@@ -1,3 +1,4 @@
+
 /**
  * Login to old FP with the given user and password
  * @param  {String}   user The email of the user

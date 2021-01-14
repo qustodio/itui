@@ -1,9 +1,9 @@
 /**
  * Select profile by name
- * @param  {String}   element inputField where the profile name is stored
+ * @param  {String}   selector inputField where the profile name is stored
  */
-module.exports = (element) => {
-  const profileName = `//div[@class="ProfileListItem__name"][contains(., "${global.world[element]}")]`;
-
-  browser["click"](profileName);
-};
+module.exports = (selector) => {
+    const profileName = `//div[@class="ProfileListItem__name"][contains(., "${global.world[selector]}")]`;
+  
+    browser["click"](profileName);
+  };

@@ -5,31 +5,28 @@
  * @param  {String}   falseState    Whether to check if the text matches or not
  * @param  {String}   expectedText  The text to check against
  */
-module.exports = (modalType, falseState, expectedText) => {
+export default (modalType, falseState, expectedText) => {
     try {
         /**
          * The text of the current modal
          * @type {String}
          */
-        const text = browser.alertText();
+        const text = browser.getAlertText();
 
         if (falseState) {
-            expect(text).to.not.equal(
+            expect(text).not.toEqual(
                 expectedText,
-                `Expected the text of ${modalType} not to equal ` +
-                `"${expectedText}"`
+                `Expected the text of ${modalType} not to equal `
+                + `"${expectedText}"`
             );
         } else {
-            expect(text).to.equal(
+            expect(text).toEqual(
                 expectedText,
-                `Expected the text of ${modalType} not to equal ` +
-                `"${expectedText}", instead found "${text}"`
+                `Expected the text of ${modalType} to equal `
+                + `"${expectedText}", instead found "${text}"`
             );
         }
     } catch (e) {
-        assert(
-            e,
-            `A ${modalType} was not opened when it should have been opened`
-        );
+        throw new Error(`A ${modalType} was not opened when it should have been opened`);
     }
 };

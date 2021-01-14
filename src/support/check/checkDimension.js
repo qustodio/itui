@@ -1,17 +1,17 @@
 /**
  * Check the dimensions of the given element
- * @param  {String}   elem         Element selector
+ * @param  {String}   selector         Element selector
  * @param  {String}   falseCase    Whether to check if the dimensions match or
  *                                 not
  * @param  {String}   expectedSize Expected size
  * @param  {String}   dimension    Dimension to check (broad or tall)
  */
-module.exports = (elem, falseCase, expectedSize, dimension) => {
+export default (selector, falseCase, expectedSize, dimension) => {
     /**
      * The size of the given element
      * @type {Object}
      */
-    const elementSize = browser.getElementSize(elem);
+    const elementSize = $(selector).getSize();
 
     /**
      * Parsed size to check for
@@ -23,7 +23,7 @@ module.exports = (elem, falseCase, expectedSize, dimension) => {
      * The size property to check against
      * @type {Int}
      */
-    let origionalSize = elementSize.height;
+    let originalSize = elementSize.height;
 
     /**
      * The label of the checked property
@@ -32,23 +32,21 @@ module.exports = (elem, falseCase, expectedSize, dimension) => {
     let label = 'height';
 
     if (dimension === 'broad') {
-        origionalSize = elementSize.width;
+        originalSize = elementSize.width;
         label = 'width';
     }
 
     if (falseCase) {
-        expect(origionalSize).to.not
-            .equal(
-                intExpectedSize,
-                `Element "${elem}" should not have a ${label} of ` +
-                `${intExpectedSize}px`
-            );
+        expect(originalSize).not.toBe(
+            intExpectedSize,
+            `Element "${selector}" should not have a ${label} of `
+            + `${intExpectedSize}px`
+        );
     } else {
-        expect(origionalSize).to
-            .equal(
-                intExpectedSize,
-                `Element "${elem}" should have a ${label} of ` +
-                `${intExpectedSize}px, but is ${origionalSize}px`
-            );
+        expect(originalSize).toBe(
+            intExpectedSize,
+            `Element "${selector}" should have a ${label} of `
+            + `${intExpectedSize}px, but is ${originalSize}px`
+        );
     }
 };

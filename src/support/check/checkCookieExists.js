@@ -4,21 +4,21 @@
  * @param  {[type]}   falseCase Whether or not to check if the cookie exists or
  *                              not
  */
-module.exports = (name, falseCase) => {
+export default (name, falseCase) => {
     /**
      * The cookie as retrieved from the browser
      * @type {Object}
      */
-    const cookie = browser.getCookie(name);
+    const cookie = browser.getCookies(name);
 
     if (falseCase) {
-        expect(cookie).to.equal(
-            null,
+        expect(cookie).toHaveLength(
+            0,
             `Expected cookie "${name}" not to exists but it does`
         );
     } else {
-        expect(cookie).to.not.equal(
-            null,
+        expect(cookie).not.toHaveLength(
+            0,
             `Expected cookie "${name}" to exists but it does not`
         );
     }

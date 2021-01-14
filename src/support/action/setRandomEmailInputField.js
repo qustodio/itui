@@ -1,3 +1,4 @@
+
 import setInputField from './setInputField';
 
 /**
@@ -9,7 +10,7 @@ import setInputField from './setInputField';
 module.exports = (method, element) => {
 
     var date = Date.now().toString();
-    var value = "qa.qustodio.e2etest+" + date + "@gmail.com";
+    var value = "qa.qustodio.e2etest+" + date + "@qustodio.com";
 
     setInputField(method, value, element);
 };

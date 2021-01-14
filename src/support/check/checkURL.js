@@ -4,22 +4,21 @@
  *                                expected value or not
  * @param  {String}   expectedUrl The expected URL to check against
  */
-module.exports = (falseCase, expectedUrl) => {
+export default (falseCase, expectedUrl) => {
     /**
      * The current browser window's URL
      * @type {String}
      */
-    const currentUrl = browser.url().value;
+    const currentUrl = browser.getUrl();
 
     if (falseCase) {
-        expect(currentUrl).to.not
-            .equal(expectedUrl, `expected url not to be "${currentUrl}"`);
+        expect(currentUrl)
+            .not.toEqual(expectedUrl, `expected url not to be "${currentUrl}"`);
     } else {
-        expect(currentUrl).to
-            .equal(
-                expectedUrl,
-                `expected url to be "${expectedUrl}" but found ` +
-                `"${currentUrl}"`
-            );
+        expect(currentUrl).toEqual(
+            expectedUrl,
+            `expected url to be "${expectedUrl}" but found `
+            + `"${currentUrl}"`
+        );
     }
 };

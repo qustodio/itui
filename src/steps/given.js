@@ -20,18 +20,6 @@ import isEnabled from '../support/check/isEnabled';
 import isDisplayed from '../support/check/isDisplayed';
 import openWebsite from '../support/action/openWebsite';
 import setWindowSize from '../support/action/setWindowSize';
-import loginFP from '../support/action/loginFP';
-import loginPAR from '../support/action/loginPAR';
-
-Given(
-    /^I login to FP with user "([^"]*)?" and password "([^"]*)?"$/,
-    loginFP
-);
-
-Given(
-    /^I login to PAR with user "([^"]*)?" and password "([^"]*)?"$/,
-    loginPAR
-);
 
 Given(
     /^I open the (url|site) "([^"]*)?"$/,

@@ -16,8 +16,6 @@ import setInputField from '../support/action/setInputField';
 import setPromptText from '../support/action/setPromptText';
 import setRandomEmailInputField from '../support/action/setRandomEmailInputField';
 import setRandomNameInputField from "../support/action/setRandomNameInputField";
-import selectCreatedProfile from "../support/action/selectCreatedProfile";
-import removeRandomProfiles from "../support/action/removeRandomProfiles";
 
 
 const { When } = require('cucumber');
@@ -30,16 +28,6 @@ When(
 When(
     /^I (add|set) a random name to the inputfield "([^"]*)?"$/,
     setRandomNameInputField
-);
-
-When(
-    /^I open the created profile with the inputfield "([^"]*)?"$/,
-    selectCreatedProfile
-);
-
-When(
-    /^I remove all profiles with name containing "([^"]*)?"$/,
-    removeRandomProfiles
 );
 
 When(

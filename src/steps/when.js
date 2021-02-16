@@ -1,3 +1,6 @@
+
+import { When } from '@cucumber/cucumber';
+
 import clearInputField from '../support/action/clearInputField';
 import clickElement from '../support/action/clickElement';
 import closeLastOpenedWindow from '../support/action/closeLastOpenedWindow';
@@ -16,9 +19,6 @@ import setInputField from '../support/action/setInputField';
 import setPromptText from '../support/action/setPromptText';
 import setRandomEmailInputField from '../support/action/setRandomEmailInputField';
 import setRandomNameInputField from "../support/action/setRandomNameInputField";
-
-
-const { When } = require('cucumber');
 
 When(
     /^I (add|set) a random email to the inputfield "([^"]*)?"$/,

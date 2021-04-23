@@ -24,6 +24,9 @@ export {default as setRandomNameInputField} from './action/setRandomNameInputFie
 export {default as setWindowSize} from './action/setWindowSize';
 export {default as waitFor} from './action/waitFor';
 export {default as waitForDisplayed} from './action/waitForDisplayed';
+export {default as switchToFrame} from './action/switchToFrame';
+export {default as returnToParentFrame} from './action/returnToParentFrame';
+export {default as setInputField} from './action/setInputField';
 
 //checks
 export {default as checkClass} from './check/checkClass';
@@ -44,6 +47,7 @@ export {default as checkModalText} from './check/checkModalText';
 export {default as checkNewWindow} from './check/checkNewWindow';
 export {default as checkOffset} from './check/checkOffset';
 export {default as checkProperty} from './check/checkProperty';
+export {default as checkPropertyContains} from './check/checkPropertyContains';
 export {default as checkSelected} from './check/checkSelected';
 export {default as checkTitle} from './check/checkTitle';
 export {default as checkTitleContains} from './check/checkTitleContains';

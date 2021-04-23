@@ -1,6 +1,7 @@
 
 import { When } from '@cucumber/cucumber';
-
+import switchToFrame from '../support/action/switchToFrame';
+import returnToParentFrame from '../support/action/returnToParentFrame';
 import clearInputField from '../support/action/clearInputField';
 import clickElement from '../support/action/clickElement';
 import closeLastOpenedWindow from '../support/action/closeLastOpenedWindow';
@@ -19,6 +20,7 @@ import setInputField from '../support/action/setInputField';
 import setPromptText from '../support/action/setPromptText';
 import setRandomEmailInputField from '../support/action/setRandomEmailInputField';
 import setRandomNameInputField from "../support/action/setRandomNameInputField";
+import repeatInputField from "../support/action/repeatInputField";
 
 When(
     /^I (add|set) a random email to the inputfield "([^"]*)?"$/,
@@ -109,3 +111,18 @@ When(
     /^I move to element "([^"]*)?"(?: with an offset of (\d+),(\d+))*$/,
     moveTo
 );
+
+When(
+    /^I switch to the iframe "([^"]*)?"$/,
+    switchToFrame
+);
+
+When(
+    /^I return to the parent iframe$/,
+    returnToParentFrame
+);
+
+When(
+    /^I repeat the text in inputfield "([^"]*)?" in the inputfield "([^"]*)?"$/,
+    repeatInputField
+ );

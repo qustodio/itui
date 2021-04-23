@@ -11,6 +11,7 @@ import checkEqualsText from '../support/check/checkEqualsText';
 import checkModal from '../support/check/checkModal';
 import checkOffset from '../support/check/checkOffset';
 import checkProperty from '../support/check/checkProperty';
+import checkPropertyContains from '../support/check/checkPropertyContains';
 import checkSelected from '../support/check/checkSelected';
 import checkTitle from '../support/check/checkTitle';
 import checkUrl from '../support/check/checkURL';
@@ -89,6 +90,11 @@ Given(
 Given(
     /^the( css)* attribute "([^"]*)?" from element "([^"]*)?" is( not)* "([^"]*)?"$/,
     checkProperty
+);
+
+Given(
+    /^the( css)* attribute "([^"]*)?" from element "([^"]*)?" does( not)* contain "([^"]*)?"$/,
+    checkPropertyContains
 );
 
 Given(

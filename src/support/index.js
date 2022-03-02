@@ -26,7 +26,6 @@ export {default as waitFor} from './action/waitFor';
 export {default as waitForDisplayed} from './action/waitForDisplayed';
 export {default as switchToFrame} from './action/switchToFrame';
 export {default as returnToParentFrame} from './action/returnToParentFrame';
-export {default as setInputField} from './action/setInputField';
 
 //checks
 export {default as checkClass} from './check/checkClass';

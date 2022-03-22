@@ -5,24 +5,24 @@
  *                                  or not
  * @param  {String}   expectedValue The value to check against
  */
-export default (name, falseCase, expectedValue) => {
+export default async (name, falseCase, expectedValue) => {
     /**
      * The cookie retrieved from the browser object
      * @type {Object}
      */
-    const cookie = browser.getCookies(name)[0];
-    expect(cookie.name).toBe(
+    const cookie = await browser.getCookies(name)[0];
+    await expect(cookie.name).toBe(
         name,
         `no cookie found with the name "${name}"`
     );
 
     if (falseCase) {
-        expect(cookie.value).not.toBe(
+        await expect(cookie.value).not.toBe(
             expectedValue,
             `expected cookie "${name}" not to have value "${expectedValue}"`
         );
     } else {
-        expect(cookie.value).toBe(
+        await expect(cookie.value).toBe(
             expectedValue,
             `expected cookie "${name}" to have value "${expectedValue}"`
             + ` but got "${cookie.value}"`

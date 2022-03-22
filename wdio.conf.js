@@ -106,7 +106,7 @@ exports.config = {
     baseUrl: 'http://localhost:3000/#/login',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 19000,
+    waitforTimeout: 99999,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -168,10 +168,8 @@ exports.config = {
         // <string[]> (name) specify the profile to use
         profile: [],
         // <string[]> (file/dir) require files before executing features
-        require: [
-            './node_modules/qustodio-itui/src/steps/given.js',
-            './node_modules/qustodio-itui/src/steps/when.js',
-            './node_modules/qustodio-itui/src/steps/then.js',
+        require: [ 
+          './src/steps/**/*.feature',
         ],
         // <string> specify a custom snippet syntax
         snippetSyntax: undefined,

@@ -5,26 +5,26 @@
  * @param  {Number}  exactly   Check if the element exists exactly this number
  *                             of times
  */
-export default (selector, falseCase, exactly) => {
+export default async (selector, falseCase, exactly) => {
     /**
      * The number of elements found in the DOM
      * @type {Int}
      */
-    const nrOfElements = $$(selector);
+    const nrOfElements = await $$(selector);
 
     if (falseCase === true) {
-        expect(nrOfElements).toHaveLength(
+        await expect(nrOfElements).toHaveLength(
             0,
             `Element with selector "${selector}" should not exist on the page`
         );
     } else if (exactly) {
-        expect(nrOfElements).toHaveLength(
+        await expect(nrOfElements).toHaveLength(
             exactly,
             `Element with selector "${selector}" should exist exactly `
             + `${exactly} time(s)`
         );
     } else {
-        expect(nrOfElements.length).toBeGreaterThanOrEqual(
+        await expect(nrOfElements.length).toBeGreaterThanOrEqual(
             1,
             `Element with selector "${selector}" should exist on the page`
         );

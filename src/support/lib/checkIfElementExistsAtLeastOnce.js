@@ -8,15 +8,15 @@ module.exports = (element, falsCase) => {
      * The number of elements found in the DOM
      * @type {Int}
      */
-    const nrOfElements = browser.elements(element).value;
+    const nrOfElements = await browser.elements(element).value;
 
     if (falsCase === true) {
-        expect(nrOfElements).to.have.lengthOf(
+        await expect(nrOfElements).to.have.lengthOf(
             0,
             `Element with selector "${element}" should not exist on the page`
         );
     } else {
-        expect(nrOfElements).to.have.length.of.at.least(
+        await expect(nrOfElements).to.have.length.of.at.least(
             1,
             `Element with selector "${element}" should exist on the page`
         );

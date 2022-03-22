@@ -2,5 +2,5 @@
  * Switch to the parent iframe
  */
  module.exports = () => {
-    browser.switchToParentFrame();
+    await browser.switchToParentFrame();
 };

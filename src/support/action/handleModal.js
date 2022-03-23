@@ -17,5 +17,5 @@ export default async (action, modalType) => {
         command = 'acceptAlert';
     }
 
-    await browser[command]();
+    browser[command]();
 };

@@ -5,5 +5,5 @@
  module.exports = (iframeSelectorId) => {
     let iframeId = '#' +  iframeSelectorId;
     let iframe = await $(iframeId)
-    await browser.switchToFrame(iframe);
+    browser.switchToFrame(iframe);
 };

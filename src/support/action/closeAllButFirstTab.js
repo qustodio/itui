@@ -9,14 +9,14 @@ export default async (obsolete) => {
      * Get all the window handles
      * @type {Object}
      */
-    const windowHandles = await browser.getWindowHandles();
+    const windowHandles = browser.getWindowHandles();
 
     // Close all tabs but the first one
     windowHandles.reverse();
     windowHandles.forEach((handle, index) => {
         browser.switchToWindow(handle);
         if (index < windowHandles.length - 1) {
-            await browser.closeWindow();
+            browser.closeWindow();
         }
     });
 };

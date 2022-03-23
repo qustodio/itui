@@ -11,7 +11,7 @@ export default async (modalType, falseState, expectedText) => {
          * The text of the current modal
          * @type {String}
          */
-        const text = await browser.getAlertText();
+        const text = browser.getAlertText();
 
         if (falseState) {
             await expect(text).not.toEqual(

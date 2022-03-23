@@ -3,5 +3,5 @@
  * @param  {String}   key  The key to press
  */
 export default async (key) => {
-    await browser.keys(key);
+    browser.keys(key);
 };

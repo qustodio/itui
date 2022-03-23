@@ -9,7 +9,7 @@ export default async (falseCase, expectedPath) => {
      * The URL of the current browser window
      * @type {String}
      */
-    let currentUrl = await browser.getUrl().replace(/http(s?):\/\//, '');
+    let currentUrl = browser.getUrl().replace(/http(s?):\/\//, '');
 
     /**
      * The base URL of the current browser window

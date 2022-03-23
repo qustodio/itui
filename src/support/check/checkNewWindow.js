@@ -9,7 +9,7 @@ export default async (obsolete, falseCase) => {
      * The handles of all open windows/tabs
      * @type {Object}
      */
-    const windowHandles = await browser.getWindowHandles();
+    const windowHandles = browser.getWindowHandles();
 
     if (falseCase) {
         await expect(windowHandles)

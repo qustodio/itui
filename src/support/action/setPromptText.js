@@ -4,7 +4,7 @@
  */
 export default async (modalText) => {
     try {
-        await browser.sendAlertText(modalText);
+        browser.sendAlertText(modalText);
     } catch (e) {
         assert(e, 'A prompt was not open when it should have been open');
     }

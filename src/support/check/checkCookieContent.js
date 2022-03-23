@@ -10,7 +10,7 @@ export default async (name, falseCase, expectedValue) => {
      * The cookie retrieved from the browser object
      * @type {Object}
      */
-    const cookie = await browser.getCookies(name)[0];
+    const cookie = browser.getCookies(name)[0];
     await expect(cookie.name).toBe(
         name,
         `no cookie found with the name "${name}"`

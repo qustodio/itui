@@ -9,5 +9,5 @@ export default async (ms) => {
      */
     const intMs = parseInt(ms, 10);
 
-    await browser.pause(intMs);
+    browser.pause(intMs);
 };

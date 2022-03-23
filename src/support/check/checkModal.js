@@ -12,7 +12,7 @@ export default async (modalType, falseState) => {
     let promptText = '';
 
     try {
-        promptText = await browser.getAlertText();
+        promptText = browser.getAlertText();
 
         if (falseState) {
             await expect(promptText).not.toEqual(

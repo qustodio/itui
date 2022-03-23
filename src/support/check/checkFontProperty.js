@@ -25,7 +25,7 @@ export default async (isCSS, attrName, elem, falseCase, expectedValue) => {
      * The actual attribute value
      * @type {Mixed}
      */
-    let attributeValue = await browser[command](elem, attrName);
+    let attributeValue = browser[command](elem, attrName);
 
     /**
      * when getting something with a color or font-weight WebdriverIO returns a

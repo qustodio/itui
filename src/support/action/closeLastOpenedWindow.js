@@ -9,8 +9,8 @@ export default async (obsolete) => {
      * The last opened window handle
      * @type {Object}
      */
-    const lastWindowHandle = await browser.getWindowHandles().slice(-1)[0];
+    const lastWindowHandle = browser.getWindowHandles().slice(-1)[0];
 
-    await browser.closeWindow();
-    await browser.switchToWindow(lastWindowHandle);
+    browser.closeWindow();
+    browser.switchToWindow(lastWindowHandle);
 };

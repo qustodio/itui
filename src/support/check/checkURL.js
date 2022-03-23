@@ -9,7 +9,7 @@ export default async (falseCase, expectedUrl) => {
      * The current browser window's URL
      * @type {String}
      */
-    const currentUrl = await browser.getUrl();
+    const currentUrl = browser.getUrl();
 
     if (falseCase) {
         await expect(currentUrl)

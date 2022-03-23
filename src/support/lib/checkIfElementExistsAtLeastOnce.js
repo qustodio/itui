@@ -8,7 +8,7 @@ module.exports = (element, falsCase) => {
      * The number of elements found in the DOM
      * @type {Int}
      */
-    const nrOfElements = await browser.elements(element).value;
+    const nrOfElements = browser.elements(element).value;
 
     if (falsCase === true) {
         await expect(nrOfElements).to.have.lengthOf(

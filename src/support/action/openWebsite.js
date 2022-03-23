@@ -9,5 +9,5 @@ export default async (type, page) => {
      * @type {String}
      */
     const url = (type === 'url') ? page : browser.options.baseUrl + page;
-    await browser.url(url);
+    browser.url(url);
 };

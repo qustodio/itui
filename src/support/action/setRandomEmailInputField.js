@@ -9,7 +9,7 @@ import setInputField from './setInputField';
  */
 module.exports = (method, element) => {
 
-    let date = await Date.now().toString();
+    let date = browser.now().toString();
     let value = "qa.qustodio.e2etest+" + date + "@qustodio.com";
 
     setInputField(method, value, element);

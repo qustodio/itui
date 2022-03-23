@@ -8,7 +8,7 @@ import setInputField from "./setInputField";
  */
 module.exports = (method, element) => {
 
-  let date = await Date.now().toString();
+  let date = browser.now().toString();
   let value = "RandomName " + date;
 
   setInputField(method, value, element);

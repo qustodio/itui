@@ -11,12 +11,12 @@ module.exports = (element, falsCase) => {
     const nrOfElements = browser.elements(element).value;
 
     if (falsCase === true) {
-        expect(nrOfElements).to.have.lengthOf(
+        await expect(nrOfElements).to.have.lengthOf(
             0,
             `Element with selector "${element}" should not exist on the page`
         );
     } else {
-        expect(nrOfElements).to.have.length.of.at.least(
+        await expect(nrOfElements).to.have.length.of.at.least(
             1,
             `Element with selector "${element}" should exist on the page`
         );

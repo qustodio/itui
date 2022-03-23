@@ -6,7 +6,7 @@
  *                                  the given text or not
  * @param  {String}   expectedText  The text to check against
  */
-export default (elementType, selector, falseCase, expectedText) => {
+export default async (elementType, selector, falseCase, expectedText) => {
     /**
      * The command to perform on the browser object
      * @type {String}
@@ -15,7 +15,7 @@ export default (elementType, selector, falseCase, expectedText) => {
 
     if (
         ['button', 'container'].includes(elementType)
-        || $(selector).getAttribute('value') === null
+        || await $(selector).getAttribute('value') === null
     ) {
         command = 'getText';
     }
@@ -36,9 +36,9 @@ export default (elementType, selector, falseCase, expectedText) => {
      * The text of the element
      * @type {String}
      */
-    const elem = $(selector);
+    const elem = await $(selector);
     elem.waitForDisplayed();
-    const text = elem[command]();
+    const text = await elem[command]();
 
     if (typeof expectedText === 'undefined') {
         stringExpectedText = falseCase;
@@ -48,8 +48,8 @@ export default (elementType, selector, falseCase, expectedText) => {
     }
 
     if (boolFalseCase) {
-        expect(text.toLowerCase()).not.toContain(stringExpectedText.toLowerCase());
+        await expect(text.toLowerCase()).not.toContain(stringExpectedText.toLowerCase());
     } else {
-        expect(text.toLowerCase()).toContain(stringExpectedText.toLowerCase());
+        await expect(text.toLowerCase()).toContain(stringExpectedText.toLowerCase());
     }
 };

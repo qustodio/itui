@@ -8,8 +8,8 @@ import setInputField from "./setInputField";
  */
 module.exports = (method, element) => {
 
-  var date = Date.now().toString();
-  var value = "RandomName " + date;
+  let date = browser.now().toString();
+  let value = "RandomName " + date;
 
   setInputField(method, value, element);
 };

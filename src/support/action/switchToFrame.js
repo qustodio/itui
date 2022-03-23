@@ -3,7 +3,7 @@
  * @param  {String}   name of the iframe
  */
  module.exports = (iframeSelectorId) => {
-    var iframeId = '#' +  iframeSelectorId;
-    var iframe = $(iframeId)
+    let iframeId = '#' +  iframeSelectorId;
+    let iframe = $(iframeId)
     browser.switchToFrame(iframe);
 };

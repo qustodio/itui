@@ -3,7 +3,7 @@
  * @param  {String}   expectedUrl The URL to check for
  */
 /* eslint-disable no-unused-vars */
-export default (expectedUrl, type) => {
+export default async (expectedUrl, type) => {
 /* eslint-enable no-unused-vars */
     /**
      * All the current window handles
@@ -11,7 +11,7 @@ export default (expectedUrl, type) => {
      */
     const windowHandles = browser.getWindowHandles();
 
-    expect(windowHandles).not.toHaveLength(1, 'A popup was not opened');
+    await expect(windowHandles).not.toHaveLength(1, 'A popup was not opened');
 
     /**
      * The last opened window handle
@@ -28,7 +28,7 @@ export default (expectedUrl, type) => {
      */
     const windowUrl = browser.getUrl();
 
-    expect(windowUrl).toContain(
+    await expect(windowUrl).toContain(
         expectedUrl,
         'The popup has a incorrect getUrl'
     );

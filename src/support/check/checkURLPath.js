@@ -4,7 +4,7 @@
  *                                 expected value or not
  * @param  {String}   expectedPath The expected path to match against
  */
-export default (falseCase, expectedPath) => {
+export default async (falseCase, expectedPath) => {
     /**
      * The URL of the current browser window
      * @type {String}
@@ -20,10 +20,10 @@ export default (falseCase, expectedPath) => {
     currentUrl = currentUrl.replace(domain, '');
 
     if (falseCase) {
-        expect(currentUrl)
+        await expect(currentUrl)
             .not.toEqual(expectedPath, `expected path not to be "${currentUrl}"`);
     } else {
-        expect(currentUrl).toEqual(
+        await expect(currentUrl).toEqual(
             expectedPath,
             `expected path to be "${expectedPath}" but found `
             + `"${currentUrl}"`

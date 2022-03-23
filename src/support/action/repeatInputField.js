@@ -9,7 +9,7 @@ module.exports = (previousElement, element) => {
 
     let command = 'getValue';
 
-    var value = await $(previousElement)[command]();
+    let value = await $(previousElement)[command]();
 
     console.log(value);
 

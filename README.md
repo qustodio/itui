@@ -1,3 +1,6 @@
+> [!NOTE]
+> This project has been archived.
+
 # e2e tests for Qustodio (PAR/QWEB)
 
 This is the Qustodio end to end tests framework based on CucumberIO 6 and integrating Cucumber.
